@@ -5,3 +5,4 @@ As seguintes libs foram instaladas:
 - qs
 - vue-router @3.2.0
 -vuex @3.0.1
+- Semantic UI @ 2.4.2 (<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">)
