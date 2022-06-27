@@ -1,0 +1,7 @@
+As seguintes libs foram instaladas:
+
+- axios
+- Lodash
+- qs
+- vue-router @3.2.0
+-vuex @3.0.1
