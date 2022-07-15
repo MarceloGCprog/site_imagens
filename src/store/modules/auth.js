@@ -3,7 +3,7 @@ import qs from 'qs';
 
 
 const state = {
-    token : null,
+    token : window.localStorage.getItem("imgur_token"),
 }
 
 const getters = {
@@ -22,6 +22,7 @@ const actions = {
 
     logout: function({commit}) {
         commit('setToken',null);
+        window.localStorage.removeItem('imgur_token');
     },
 
     login: function(){
@@ -45,7 +46,10 @@ const actions = {
         account_id=
         Tudo separar por '&'
         */
-        commit('setToken',strutHash.access_token);
+        commit('setToken',strutHash.access_token); //alterando a variavel setToken com o valor do strutHash
+        window.localStorage.setItem('imgur_token',strutHash.access_token); //A variavel imgur_token que esta
+                            //no localStorage do browser recebera o valor do token (logo != de null).
+                            //Essa variavel sera verificada para avaliar se a pessoa esta ou nao logada
         
     }
     

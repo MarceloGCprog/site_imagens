@@ -5,19 +5,13 @@
         </a>
         
         <div class="right menu">
-            <div class="row" v-if="isLoggedIn">
-            <a href="#" class="ui item" >
-            Galleries
-            </a>
-            <a href="#" class="ui item" >
-            Upload
-            </a>
-            <a href="#" class="ui item" >
-            Logout
-            </a>
+            <div v-if="isLoggedIn" class="horizontal">
+                <a href="#" class="item" > Galleries </a>
+                <a href="#" class="item" > Upload  </a>
+                <a class="item" @click="logout"  > Logout  </a>
 
             </div>
-            <a v-else href="#" class="ui item" @click="login">
+            <a v-else class="ui item" @click="login">
             Login
             </a>
         
@@ -33,11 +27,15 @@
 
     export default {
         name:'AppHeader',
-        methods: mapActions(['login']),
+        methods: mapActions(['login','logout']),
         computed: mapGetters(['isLoggedIn'])
     }
 </script>
 
-<style>
+<style scoped>
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
 
 </style>
