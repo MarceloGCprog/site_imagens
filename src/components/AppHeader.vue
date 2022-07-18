@@ -4,7 +4,7 @@
         Image Storage
         </a>
         <div class="right menu">
-            <a href="#" class="ui item" @click="login">
+            <a href="#" class="ui item" @click="login" target="_blank">
             Login
             </a>
         
