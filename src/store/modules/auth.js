@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main.js';
 
 
 const state = {
@@ -23,6 +24,7 @@ const actions = {
     logout: function({commit}) {
         commit('setToken',null);
         window.localStorage.removeItem('imgur_token');
+        
     },
 
     login: function(){
@@ -50,6 +52,9 @@ const actions = {
         window.localStorage.setItem('imgur_token',strutHash.access_token); //A variavel imgur_token que esta
                             //no localStorage do browser recebera o valor do token (logo != de null).
                             //Essa variavel sera verificada para avaliar se a pessoa esta ou nao logada
+        
+        router.push('/'); //Fara com que apos realizar o login o usuario seja encaminhado para a url    
+                            // "/" sem a nec. de recarregar toda a pagina (SPA).
         
     }
     

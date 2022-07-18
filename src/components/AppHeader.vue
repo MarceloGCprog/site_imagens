@@ -1,13 +1,15 @@
 <template>
     <div class="ui secondary pointing menu">
-        <a class=" active item" href="/">
+        <router-link class=" active item" to="/">
         Image Storage
-        </a>
+        </router-link>
         
         <div class="right menu">
             <div v-if="isLoggedIn" class="horizontal">
-                <a href="#" class="item" > Galleries </a>
-                <a href="#" class="item" > Upload  </a>
+            <!-- Usando o vueRouter, substituimos o <a></a> por <router-link> </router-link> e o href="" por to=""
+            Dessa forma ocorrera a atualizacao sem o reload completo da pagina-->
+                <router-link to='/' class="item" > Galleries</router-link>
+                <router-link to='/upload' class="item" > Upload  </router-link>
                 <a class="item" @click="logout"  > Logout  </a>
 
             </div>
