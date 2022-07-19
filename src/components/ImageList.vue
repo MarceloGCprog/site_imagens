@@ -1,10 +1,13 @@
 <template>
-    <div>
-        Image List
-        {{AllImages.length}}
-        <img v-for="image in AllImages" 
-        v-bind:src="image.link" 
-        v-bind:key="image.id" /> <!-- cada 'image' eh um array com diversas informacoes que bem do backend
+    <div >
+        <div v-for="image in AllImages" v-bind:key="image.id">
+        <img class="ui middle aligned tiny image" v-bind:src="image.link"/>
+        <span>Id {{image.id}}</span>        
+        
+        </div>
+         
+        
+        <!-- cada 'image' eh um array com diversas informacoes que bem do backend
         a propriedade src faz reference ao link que a tag 'img' precisa renderizar
         jah a prop key eh obrigatoria e eh um meio de definir aquela info. como unica  -->
     </div>
@@ -26,6 +29,6 @@
     }
 </script>
 
-<style>
+<style scoped>
 
 </style>
