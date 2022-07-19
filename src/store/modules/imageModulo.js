@@ -22,12 +22,12 @@ const mutations = {
 
 const actions = {
 
-     FetchImages: async function( {rootState}){ //rootState eh uma funcao do vuex que permite acessar TODOS os states 
+     FetchImages: async function( {rootState, commit}){ //rootState eh uma funcao do vuex que permite acessar TODOS os states 
                                         //de todos os modulos elencados no index.js e obter informacoes
 
         const token = rootState.auth.token; //correto seria fazer {token} = rootState.auth 
         const response = await api.imageFetcher(token);
-        console.log(response);
+        commit('setImages',response.data.data); //a array que vem da resposta tem um 'data' do axios e um 'data' do nome do servidor backend imgur
     },
 
     UploadImages: function (){},
