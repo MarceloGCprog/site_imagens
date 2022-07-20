@@ -54,7 +54,7 @@ const actions = {
                             //Essa variavel sera verificada para avaliar se a pessoa esta ou nao logada
         
         router.push('/'); //Fara com que apos realizar o login o usuario seja encaminhado para a url    
-                            // "/" sem a nec. de recarregar toda a pagina (SPA).
+                            // "/" sem a nec. de recarregar toda a pagina (SPA) Usado pelo router importado.
         
     }
     

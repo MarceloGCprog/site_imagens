@@ -1,4 +1,5 @@
 import api from '../../api/imgur';
+import {router} from '../../main';
 
 const state ={
     
@@ -29,10 +30,20 @@ const actions = {
         const response = await api.imageFetcher(token);
         commit('setImages',response.data.data); //a array que vem da resposta tem um 'data' do axios e um 'data' do nome do servidor backend imgur
     },
+/* eslint-disable */
+    UploadImages: async function ({rootState}, uploadImgList){
 
-    UploadImages: function (){},
+        //Get de access token
+        const { token } = rootState.auth; //comparar com a funcao do FetchImagens
 
-}
+        // Call API module to do de upload
+        await api.UpLoaderImage(uploadImgList, token); //o await fara a funcao aguardar o promise resposta
+
+        //Redirect to the gallerie (imgList component)
+        router.push('/'); //ocorrera apos o await permitir que a funcao continue      
+
+    }
+};
 
 export default {
     state: state,

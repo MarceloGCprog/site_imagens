@@ -1,7 +1,10 @@
 <template>
     <div>
         <AppHeaderVue></AppHeaderVue>
-        <router-view></router-view>
+        <div class="ui container">
+           <router-view></router-view> 
+        </div>
+        
     </div>
 </template>
 
@@ -14,3 +17,9 @@
         }
     };
 </script>
+
+<style scoped>
+
+
+
+</style>
